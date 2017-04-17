@@ -39,6 +39,7 @@ namespace ToDoList
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+            
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
@@ -52,7 +53,7 @@ namespace ToDoList
             {
                 app.UseDeveloperExceptionPage();
             }
-
+            app.UseStaticFiles();
             app.Run(async (context) =>
             {
                 await context.Response.WriteAsync("Hello World!");
