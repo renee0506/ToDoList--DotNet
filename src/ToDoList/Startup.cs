@@ -24,7 +24,7 @@ namespace ToDoList
 
             services.AddEntityFramework()
                 .AddDbContext<ToDoListContext>(options =>
-                options.UseSqlServer(Configuration["ConnectionString: DefaultConnection"]));
+                    options.UseSqlServer(Configuration["ConnectionStrings:DefaultConnection"]));
         }
 
         public IConfigurationRoot Configuration { get; set; } 
